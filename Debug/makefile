@@ -24,24 +24,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-BlinkyTest.elf \
+MicroP_BlinkyTest.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-BlinkyTest.list \
+MicroP_BlinkyTest.list \
 
 OBJCOPY_BIN += \
-BlinkyTest.bin \
+MicroP_BlinkyTest.bin \
 
 
 # All Target
-all: BlinkyTest.elf secondary-outputs
+all: MicroP_BlinkyTest.elf secondary-outputs
 
 # Tool invocations
-BlinkyTest.elf: $(OBJS) $(USER_OBJS) D:\mp\microcontroller\STM32F429ZITX_FLASH.ld
-	arm-none-eabi-gcc -o "BlinkyTest.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\mp\microcontroller\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BlinkyTest.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MicroP_BlinkyTest.elf: $(OBJS) $(USER_OBJS) C:\Users\academic\Desktop\y3\microP\MicroP_BlinkyTest\STM32F429ZITX_FLASH.ld
+	arm-none-eabi-gcc -o "MicroP_BlinkyTest.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\academic\Desktop\y3\microP\MicroP_BlinkyTest\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MicroP_BlinkyTest.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -50,13 +50,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-BlinkyTest.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BlinkyTest.list"
+MicroP_BlinkyTest.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "MicroP_BlinkyTest.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-BlinkyTest.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "BlinkyTest.bin"
+MicroP_BlinkyTest.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "MicroP_BlinkyTest.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

@@ -24,8 +24,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
- ../Core/Inc/Gpio.h ../Core/Inc/BaseAddress.h ../Core/Inc/Common.h \
- ../Core/Inc/Rcc.h ../Core/Inc/Common.h ../Core/Inc/BaseAddress.h
+ ../Core/Inc/Gpio.h ../Core/Inc/IO/BaseAddress.h ../Core/Inc/Common.h \
+ ../Core/Inc/Rcc.h ../Core/Inc/Common.h
 
 ../Core/Inc/main.h:
 
@@ -81,12 +81,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/Gpio.h:
 
-../Core/Inc/BaseAddress.h:
+../Core/Inc/IO/BaseAddress.h:
 
 ../Core/Inc/Common.h:
 
 ../Core/Inc/Rcc.h:
 
 ../Core/Inc/Common.h:
-
-../Core/Inc/BaseAddress.h:

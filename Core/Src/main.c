@@ -99,9 +99,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  gpioWrite(gpioG,PIN_13,1);
+	  gpioWriteBit(gpioG,PIN_13,1);
 	  HAL_Delay(100);
-	  gpioWrite(gpioG,PIN_13,0);
+	  gpioWriteBit(gpioG,PIN_13,0);
 	  HAL_Delay(100);
     /* USER CODE END WHILE */
 

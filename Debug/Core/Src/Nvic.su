@@ -1,0 +1,8 @@
+Nvic.c:11:6:nvicEnableInterrupt	16	static
+Nvic.c:16:6:nvicDisableInterrupt	16	static
+Nvic.c:21:6:nvicSetPendingInterrupt	16	static
+Nvic.c:26:6:nvicClearPendingInterrupt	16	static
+Nvic.c:31:5:nvicIsInterruptActive	16	static
+Nvic.c:36:6:nvicSetInterruptPriority	16	static
+Nvic.c:42:5:nvicGetInterruptPriority	16	static
+Nvic.c:48:6:nvicSoftwareTriggerInterrupt	16	static
