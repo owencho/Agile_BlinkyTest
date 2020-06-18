@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "Gpio.h"
 #include "Rcc.h"
+#include "Nvic.h"
 #include "Common.h"
 #include "BaseAddress.h"
 /* USER CODE END Includes */
@@ -93,23 +94,30 @@ int main(void)
   enableGpioG();
   gpioSetMode(gpioG, PIN_13, GPIO_OUT);
   gpioSetPinSpeed(gpioG,PIN_13,HIGH_SPEED);
+
+  enableGpioA();
+  gpioSetMode(gpioA, PIN_0, GPIO_IN);
+  gpioSetPinSpeed(gpioA,PIN_0,HIGH_SPEED);
+  nvicEnableInterrupt(6); //enable EXTI Line0 interrupt
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  gpioWriteBit(gpioG,PIN_13,1);
-	  HAL_Delay(100);
-	  gpioWriteBit(gpioG,PIN_13,0);
-	  HAL_Delay(100);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
-
+void EXTI0_IRQHandler(){
+	 gpioWriteBit(gpioG,PIN_13,1);
+	 HAL_Delay(100);
+	 gpioWriteBit(gpioG,PIN_13,0);
+	 HAL_Delay(100);
+}
 /**
   * @brief System Clock Configuration
   * @retval None
