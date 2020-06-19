@@ -14,4 +14,9 @@ typedef enum{
 	PIN_8,PIN_9,PIN_10,PIN_11,PIN_12,PIN_13,PIN_14,PIN_15,
 } PinNumber;
 
+typedef enum{
+	 PORT_A,PORT_B,PORT_C,PORT_D,PORT_E,PORT_F,PORT_G,PORT_H,
+   PORT_I,PORT_J,PORT_K,
+} PortName;
+
 #endif /* INC_COMMON_H_ */

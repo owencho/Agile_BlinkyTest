@@ -1,3 +1,4 @@
-build/**
+build/*
+Debug/
 !build/Readme.txt
-Debug/**
+
