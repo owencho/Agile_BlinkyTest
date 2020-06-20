@@ -113,16 +113,16 @@ int main(void)
   {
 
     /* USER CODE END WHILE */
-
+	  gpioWriteBit(gpioG,PIN_13,1);
+	  HAL_Delay(100);
+	  gpioWriteBit(gpioG,PIN_13,0);
+	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
 void EXTI0_IRQHandler(){
-	 gpioWriteBit(gpioG,PIN_13,1);
-	 HAL_Delay(100);
-	 gpioWriteBit(gpioG,PIN_13,0);
-	 HAL_Delay(100);
+
 }
 /**
   * @brief System Clock Configuration
